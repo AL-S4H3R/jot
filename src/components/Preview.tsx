@@ -3,7 +3,7 @@ import { unified } from 'unified'
 import remarkParse from 'remark-parse'
 import remarkGfm from 'remark-gfm'
 import remarkReact from 'remark-react'
-// import RemarkCode from './remark-code'
+import RemarkCode from './RemarkCode'
 import { defaultSchema } from 'hast-util-sanitize'
 import 'github-markdown-css/github-markdown.css'
 
@@ -27,11 +27,11 @@ const Preview: React.FC<Props> = (props) => {
       createElement,
       sanitize: schema,
       remarkReactComponents: {
-        // code: RemarkCode
+        code: RemarkCode
       }
     })
     .processSync(props.doc).result
-  return <div className='preview markdown-body'>{md}</div>
+  return <div className='preview markdown-body h-screen px-4'>{md}</div>
 }
 
 export default Preview

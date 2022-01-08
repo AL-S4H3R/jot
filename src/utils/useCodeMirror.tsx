@@ -57,19 +57,15 @@ const useCodeMirror = <T extends Element>(
       extensions: [
         keymap.of([...defaultKeymap, ...historyKeymap]),
         lineNumbers(),
-        highlightActiveLineGutter(),
         history(),
         indentOnInput(),
         bracketMatching(),
         defaultHighlightStyle.fallback,
-        highlightActiveLine(),
         markdown({
           base: markdownLanguage,
           codeLanguages: languages,
           addKeymap: true
         }),
-        oneDark,
-        transparentTheme,
         syntaxHighlighting,
         EditorView.lineWrapping,
         EditorView.updateListener.of(update => {

@@ -11,7 +11,7 @@ const RemarkCode: React.FC<
 > = props => {
   const [spans, setSpans] = useState<Tokens>([])
   const { className } = props
-  const langName = (className || '').substr(9)
+  const langName = (className || '').substring(9)
 
   useEffect(() => {
     getLanguage(langName).then(language => {
@@ -41,7 +41,6 @@ const RemarkCode: React.FC<
       </code>
     )
   } else {
-
     return <code>{props.children}</code>
   }
 }
