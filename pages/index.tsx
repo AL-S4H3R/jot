@@ -5,9 +5,10 @@ import {  BiSearch, BiMenuAltLeft, BiX, BiLogIn } from 'react-icons/bi'
 const Home: NextPage = () => {
 
     const [isMenu, setIsMenu] = useState(false)
+    const msg = `Write Stuff, Get Crypto.`
 
     return(
-        <div className='h-screen w-screen' style={{ fontFamily: 'Ubuntu Mono' }} >
+        <div className='h-screen w-screen space-y-4' style={{ fontFamily: 'Ubuntu Mono' }} >
             <nav className='px-4 py-4 md:flex md:items-center md:justify-between md:px-16'>
                 <div className='flex items-center justify-between'>
                     <div>
@@ -32,6 +33,14 @@ const Home: NextPage = () => {
                     </ul>
                 </div>
             </nav>
+            <section className='px-4 py-4 space-y-4'>
+                <h2 className='text-left font-semibold text-5xl tracking-wider leading-tight md:text-center'>
+                    {msg}
+                </h2>
+                <div className='md:flex justify-center'>
+                    <button className='p-2 border-2 border-gray-900'>Get Started</button>
+                </div>
+            </section>
         </div>
     )
 }
